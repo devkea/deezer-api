@@ -135,6 +135,24 @@ class DeezerAPI
     }
 
     /**
+     * @return array|object
+     * @throws DeezerAPIException
+     */
+    public function getFavoriteArtist()
+    {
+        return $this->client->apiRequest('GET', 'user/me/artists');
+    }
+
+    /**
+     * @return array|object
+     * @throws DeezerAPIException
+     */
+    public function getFavoriteTracks()
+    {
+        return $this->client->apiRequest('GET', 'user/me/tracks');
+    }
+
+    /**
      * Add an artist to the user's favorites.
      *
      * @param string|int $artistId
